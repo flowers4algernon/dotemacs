@@ -6,4 +6,8 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;; Save customizations to their own file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file :noerror)
+
 ;;; init.el ends here
