@@ -1,3 +1,9 @@
+#+TITLE: geoff.org --- My personal GNU Emacs config
+#+DATE: <2017-07-01 Sat>
+#+AUTHOR: Geoff Wark
+#+EMAIL: gtw@airmail.cc
+
+
 
 Keep all backups/auto-saves in =$TMPDIR=
 
