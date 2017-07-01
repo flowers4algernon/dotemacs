@@ -28,18 +28,8 @@
   (require 'diminish) ; allows for easy removal of packages' modeline strings
   (require 'bind-key) ; simplifies how keybindings are set
   
-  ;; Keep all backups/auto-saves in $TMPDIR
-  (setq backup-directory-alist
-	`((".*" . ,temporary-file-directory)))
-  (setq auto-save-file-name-transforms
-	`((".*" ,temporary-file-directory t)))
-
   ;; Tangle and load the rest of the config!
   (org-babel-load-file "~/.emacs.d/geoff.org")
-
-  ;; Save customizations to their own file
-  (setq custom-file "~/.emacs.d/custom.el")
-  (load custom-file :noerror)
 
   ;; Revert garbage collection behaviour to a more modern level
   (run-with-idle-timer

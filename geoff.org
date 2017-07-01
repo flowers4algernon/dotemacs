@@ -1,3 +1,16 @@
+
+Keep all backups/auto-saves in =$TMPDIR=
+
 #+BEGIN_SRC emacs-lisp
-;
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
+#+END_SRC
+
+Save customizations to their own file.
+
+#+BEGIN_SRC emacs-lisp
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file :noerror)
 #+END_SRC
