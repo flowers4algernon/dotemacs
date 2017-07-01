@@ -98,3 +98,16 @@ Also stop that goddamn blinking!
   (add-to-list 'default-frame-alist '(font . "Liberation Mono-12"))
 #+END_SRC
 
+* Indentation
+
+Use spaces over tabs.  If needed you can insert a tab with =C-q TAB=
+
+#+BEGIN_SRC emacs-lisp
+  (setq-default indent-tabs-mode nil)
+#+END_SRC
+
+Default to using a width of 2 per indent column.
+
+#+BEGIN_SRC emacs-lisp
+  (setq-default tab-width 2)
+#+END_SRC
