@@ -38,3 +38,63 @@ Always install packages automatically if they are not already present on the sys
 #+BEGIN_SRC emacs-lisp
   (setq use-package-always-ensure t)
 #+END_SRC
+
+* UI/UX
+** Free up screen real estate
+
+The following toolbars take up unnecessary space:
+
+#+BEGIN_SRC emacs-lisp
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+#+END_SRC
+
+** Theme
+
+[[http://kippura.org/zenburnpage/][Zenburn]] is pretty easy on the eyes.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package zenburn-theme
+    :init
+    (load-theme 'zenburn t))
+#+END_SRC
+
+** Face
+
+Italicize comments.
+
+#+BEGIN_SRC emacs-lisp
+  (make-face-italic 'font-lock-comment-face)
+#+END_SRC
+
+Make =region= color more obvious.
+
+#+BEGIN_SRC emacs-lisp
+  (set-face-attribute 'region nil
+                      :background "white smoke"
+                      :foreground "black")
+#+END_SRC
+
+** Cursor
+
+Make cursor easier to see by changing its color to red.
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'default-frame-alist '(cursor-color . "red"))
+#+END_SRC
+
+Also stop that goddamn blinking!
+
+#+BEGIN_SRC emacs-lisp
+  (blink-cursor-mode -1)
+#+END_SRC
+
+** Font
+
+[[https://pagure.io/liberation-fonts][Liberation Fonts]] are pretty dope.  Make sure you have them installed.
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'default-frame-alist '(font . "Liberation Mono-12"))
+#+END_SRC
+
