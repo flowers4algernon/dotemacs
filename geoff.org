@@ -30,3 +30,11 @@ Save customizations to their own file.  This prevents junk from being being appe
   (setq auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t)))
 #+END_SRC
+
+* =use-package= settings
+
+Always install packages automatically if they are not already present on the system.
+
+#+BEGIN_SRC emacs-lisp
+  (setq use-package-always-ensure t)
+#+END_SRC
