@@ -34,6 +34,9 @@
   (setq auto-save-file-name-transforms
 	`((".*" ,temporary-file-directory t)))
 
+  ;; Tangle and load the rest of the config!
+  (org-babel-load-file "~/.emacs.d/geoff.org")
+
   ;; Save customizations to their own file
   (setq custom-file "~/.emacs.d/custom.el")
   (load custom-file :noerror)
