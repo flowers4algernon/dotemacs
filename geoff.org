@@ -3,20 +3,30 @@
 #+AUTHOR: Geoff Wark
 #+EMAIL: gtw@airmail.cc
 
+* First Things First
+** Let Emacs know who I am
 
+Be sure to change this to your own info ;)
 
-Keep all backups/auto-saves in =$TMPDIR=
+#+BEGIN_SRC emacs-lisp
+  (setq user-full-name    "Geoff Wark"
+        user-mail-address "gtw@airmail.cc")
+#+END_SRC
+
+** Move the =custom-file=
+
+Save customizations to their own file.  This prevents junk from being being appended to [[file:init.el][init.el]].
+
+#+BEGIN_SRC emacs-lisp
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file :noerror) ; we don't care if the file exists
+#+END_SRC
+
+** Keep all backups/auto-saves in =$TMPDIR=
 
 #+BEGIN_SRC emacs-lisp
   (setq backup-directory-alist
         `((".*" . ,temporary-file-directory)))
   (setq auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t)))
-#+END_SRC
-
-Save customizations to their own file.
-
-#+BEGIN_SRC emacs-lisp
-  (setq custom-file "~/.emacs.d/custom.el")
-  (load custom-file :noerror)
 #+END_SRC
