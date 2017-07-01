@@ -16,6 +16,17 @@
   (add-to-list 'package-archives
 	       '("melpa" . "https://melpa.org/packages/"))
   (package-initialize)
+
+  ;; Bootstrap `use-package'.  It will manage all other packages.
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
+
+  ;; further reduce load time
+  (eval-when-compile
+    (require 'use-package))
+  (require 'diminish) ; allows for easy removal of packages' modeline strings
+  (require 'bind-key) ; simplifies how keybindings are set
   
   ;; Keep all backups/auto-saves in $TMPDIR
   (setq backup-directory-alist
