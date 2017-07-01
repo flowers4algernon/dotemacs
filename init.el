@@ -10,6 +10,13 @@
 ;; NOTE: Some bogus, benign errors will be thrown.
 (let ((file-name-handler-alist nil))
 
+  ;; Set up package.el for use with MELPA
+  (require 'package)
+  (setq package-enable-at-startup nil)
+  (add-to-list 'package-archives
+	       '("melpa" . "https://melpa.org/packages/"))
+  (package-initialize)
+  
   ;; Keep all backups/auto-saves in $TMPDIR
   (setq backup-directory-alist
 	`((".*" . ,temporary-file-directory)))
